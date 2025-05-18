@@ -57,9 +57,9 @@
               ]
             },
             "dev": {
-              "optimization": false,
+              "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "namedChunks": false,
               "extractLicenses": true,
               "aot": true,
@@ -83,14 +83,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "trello-clone:build",
-            "proxyConfig": "src/proxy.config.json"
+            "proxyConfig": "src/proxy.config.json",
+            "hmr": true
           },
           "configurations": {
             "production": {
-              "buildTarget": "trello-clone:build:production"
+              "buildTarget": "trello-clone:build:production",
+              "hmr": true
             },
             "dev": {
-              "buildTarget": "trello-clone:build:dev"
+              "buildTarget": "trello-clone:build:dev",
+              "hmr": true
             }
           }
         },

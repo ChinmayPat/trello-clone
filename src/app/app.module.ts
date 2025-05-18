@@ -12,16 +12,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
-import { NgxTiptapModule } from 'ngx-tiptap';
 import { TextEditorMenuComponent } from './components/text-editor-menu/text-editor-menu.component';
 import { BoardStore } from './state/board.state';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { TiptapEditorDirective, TiptapNodeViewContentDirective } from 'ngx-tiptap';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
   providers: [BoardStore, provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     CdkDrag,
     CdkDropList,
@@ -49,7 +47,9 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     MatToolbarModule,
     MatDialogModule,
     MatSelectModule,
-    NgxTiptapModule,
+    BrowserAnimationsModule,
+    TiptapEditorDirective,
+    TiptapNodeViewContentDirective,
   ],
 })
 export class AppModule {}
